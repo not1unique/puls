@@ -19,14 +19,14 @@
 body{
     font-family:Inter,sans-serif;
     background:#eef2f7;
-    height:100vh;
-    overflow:hidden;
+    min-height:100vh;
+    overflow-x:hidden;
 }
 
 .container{
     display:flex;
     flex-direction:column;
-    height:100vh;
+    min-height:100vh;
 }
 
 /* ---------- MAP ---------- */
@@ -34,6 +34,7 @@ body{
 .map-section{
     position:relative;
     flex:1;
+    min-height:50vh;
     overflow:hidden;
 }
 
@@ -78,12 +79,10 @@ body{
 /* ---------- CARDS ---------- */
 
 .cards{
-    height:42%;
     padding:35px;
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
     gap:24px;
-    overflow:auto;
 }
 
 .card{
@@ -94,6 +93,7 @@ body{
     cursor:pointer;
     transition:.35s;
     background:#333;
+    aspect-ratio:16/10;
     box-shadow:
         0 18px 35px rgba(0,0,0,.18);
 }
@@ -145,15 +145,85 @@ body{
     line-height:1.4;
 }
 
-@media(max-width:900px){
+/* ---------- TABLET ---------- */
 
-    .cards{
-        grid-template-columns:1fr;
-        height:48%;
+@media (max-width:900px){
+
+    .container{
+        display:block;
+    }
+
+    .map-section{
+        height:38vh;
+        min-height:260px;
+    }
+
+    .title{
+        left:20px;
+        top:20px;
+        right:20px;
     }
 
     .title h1{
-        font-size:2rem;
+        font-size:1.9rem;
+        line-height:1.1;
+    }
+
+    .title p{
+        font-size:1rem;
+        margin-top:6px;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+        gap:18px;
+        padding:18px;
+    }
+
+    .card{
+        border-radius:18px;
+    }
+
+    .content{
+        left:18px;
+        right:18px;
+        bottom:18px;
+    }
+
+    .content h2{
+        font-size:1.2rem;
+    }
+
+    .content p{
+        font-size:.9rem;
+    }
+
+}
+
+/* ---------- SMARTPHONE ---------- */
+
+@media (max-width:480px){
+
+    .map-section{
+        height:32vh;
+        min-height:220px;
+    }
+
+    .title h1{
+        font-size:1.6rem;
+    }
+
+    .title p{
+        font-size:.9rem;
+    }
+
+    .cards{
+        padding:14px;
+        gap:14px;
+    }
+
+    .card{
+        aspect-ratio:4/3;
     }
 
 }
@@ -182,7 +252,7 @@ body{
     <section class="cards">
 
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?auto=format&fit=crop&w=900&q=80">
+            <img src="https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?auto=format&fit=crop&w=900&q=80" alt="Marienplatz">
             <div class="content">
                 <h2>Marienplatz</h2>
                 <p>Das historische Zentrum Münchens mit dem berühmten Neuen Rathaus und dem Glockenspiel.</p>
@@ -190,7 +260,7 @@ body{
         </div>
 
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=900&q=80">
+            <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=900&q=80" alt="Schloss Nymphenburg">
             <div class="content">
                 <h2>Schloss Nymphenburg</h2>
                 <p>Barockes Schloss mit prachtvollen Gärten und historischen Pavillons.</p>
@@ -198,7 +268,7 @@ body{
         </div>
 
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=900&q=80">
+            <img src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=900&q=80" alt="Englischer Garten">
             <div class="content">
                 <h2>Englischer Garten</h2>
                 <p>Einer der größten innerstädtischen Parks der Welt mit Eisbach und Biergärten.</p>
@@ -206,7 +276,7 @@ body{
         </div>
 
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="Frauenkirche">
             <div class="content">
                 <h2>Frauenkirche</h2>
                 <p>Das Wahrzeichen Münchens mit den markanten Zwiebeltürmen.</p>
