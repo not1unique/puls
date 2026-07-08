@@ -104,15 +104,44 @@ body{
         0 25px 50px rgba(0,0,0,.25);
 }
 
-.card img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
+.card-image{
+    position:absolute;
+    inset:0;
+    background-image:url("muenchen-kacheln.jpg");
+    background-size:300% 200%;
     transition:.5s;
 }
 
-.card:hover img{
+.card:hover .card-image{
     transform:scale(1.08);
+}
+
+/* obere Reihe */
+
+.frauenkirche{
+    background-position:left top;
+}
+
+.eisbach{
+    background-position:center top;
+}
+
+.marienplatz{
+    background-position:right top;
+}
+
+/* untere Reihe */
+
+.nymphenburg{
+    background-position:left bottom;
+}
+
+.universitaet{
+    background-position:center bottom;
+}
+
+.allianz{
+    background-position:right bottom;
 }
 
 .card::after{
@@ -252,7 +281,7 @@ body{
     <section class="cards">
 
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?auto=format&fit=crop&w=900&q=80" alt="Marienplatz">
+            <div class="card-image marienplatz"></div>
             <div class="content">
                 <h2>Marienplatz</h2>
                 <p>Das historische Zentrum Münchens mit dem berühmten Neuen Rathaus und dem Glockenspiel.</p>
@@ -260,7 +289,7 @@ body{
         </div>
 
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=900&q=80" alt="Schloss Nymphenburg">
+            <div class="card-image nymphenburg"></div>
             <div class="content">
                 <h2>Schloss Nymphenburg</h2>
                 <p>Barockes Schloss mit prachtvollen Gärten und historischen Pavillons.</p>
@@ -268,7 +297,7 @@ body{
         </div>
 
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=900&q=80" alt="Englischer Garten">
+            <div class="card-image eisbach"></div>
             <div class="content">
                 <h2>Englischer Garten</h2>
                 <p>Einer der größten innerstädtischen Parks der Welt mit Eisbach und Biergärten.</p>
@@ -276,10 +305,26 @@ body{
         </div>
 
         <div class="card">
-            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="Frauenkirche">
+            <div class="card-image frauenkirche"></div>
             <div class="content">
                 <h2>Frauenkirche</h2>
                 <p>Das Wahrzeichen Münchens mit den markanten Zwiebeltürmen.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-image allianz"></div>
+            <div class="content">
+                <h2>Allianz Arena</h2>
+                <p>Das Stadion des erfolgreichsten Fußballclubs Deutschlands.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-image universitaet"></div>
+            <div class="content">
+                <h2>Universität</h2>
+                <p>Die Altehrwürdige Ludwig-Maximilians-Universität in München.</p>
             </div>
         </div>
 
